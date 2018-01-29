@@ -5,8 +5,8 @@ import Alamofire
 class MovieApiManager: NSObject {
     
     static let api_key = "" /** INSERT YOUR API KEY HERE **/
-    static var base_url : String? = nil
-    static var poster_small_size_prefix : String? = nil
+    static var base_url : String = ""
+    static var poster_small_size_prefix : String = ""
     
     
     /// Preparation method need for requesting base information ad base_url and poster prefixes
@@ -25,10 +25,20 @@ class MovieApiManager: NSObject {
             
             if let result = data.result.value {
                 let JSON = result as! NSDictionary
-                let imagesJSON = JSON["images"] as! NSDictionary
-                self.base_url = imagesJSON["base_url"] as? String
-                let poster_sizes = imagesJSON["poster_sizes"] as! Array<String>
-                self.poster_small_size_prefix = poster_sizes.first
+                if let imagesJSON = JSON["images"] as? NSDictionary 
+                {
+                    if let baseURL = imagesJSON["base_url"] as? String
+                    {
+                        self.base_url = baseURL
+                    }
+                     
+                    if let poster_sizes = imagesJSON["poster_sizes"] as? Array<String>
+                    {
+                        if poster_sizes.count > 0 {
+                            self.poster_small_size_prefix = poster_sizes.first!
+                        }
+                    }
+                }
                 
                 callback()
             }
@@ -82,7 +92,7 @@ class MovieApiManager: NSObject {
                             
                             if let imageURLString = mInfo["poster_path"] as? String
                             {
-                                let fullURLString = String(format:"%@%@%@", base_url!, poster_small_size_prefix!, imageURLString)
+                                let fullURLString = String(format:"%@%@%@", base_url, poster_small_size_prefix, imageURLString)
                                 let url = URL(string:fullURLString)
                                 
                                 do{
@@ -133,7 +143,7 @@ class MovieApiManager: NSObject {
                     
                     if let imageURLString = JSON["poster_path"] as? String
                     {
-                        let fullURLString = String(format:"%@original%@", base_url!, imageURLString)
+                        let fullURLString = String(format:"%@original%@", base_url, imageURLString)
                         let url = URL(string:fullURLString)
                         do{
                             let imageData = try Data(contentsOf: url!)

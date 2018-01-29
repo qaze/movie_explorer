@@ -23,7 +23,7 @@
 /* Begin PBXFileReference section */
 		05B2CC155A93952D92899F7B /* Pods-MovieExplorer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieExplorer.release.xcconfig"; path = "Pods/Target Support Files/Pods-MovieExplorer/Pods-MovieExplorer.release.xcconfig"; sourceTree = "<group>"; };
 		A42B2C30201F856100572E4A /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Sources/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
-		A42B2C32201F856800572E4A /* MovieInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MovieInfo.swift; path = MovieExplorer/Model/MovieInfo.swift; sourceTree = SOURCE_ROOT; };
+		A42B2C32201F856800572E4A /* MovieInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MovieInfo.swift; path = Sources/Model/MovieInfo.swift; sourceTree = SOURCE_ROOT; };
 		A42B2C39201F85E300572E4A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Sources/Info.plist; sourceTree = SOURCE_ROOT; };
 		A4DD2B7B201F315300087CE6 /* MovieExplorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieExplorer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4DD2B80201F315300087CE6 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -111,7 +111,7 @@
 		A4DD2B72201F315300087CE6 = {
 			isa = PBXGroup;
 			children = (
-				A4DD2B7D201F315300087CE6 /* MovieExplorer */,
+				A4DD2B7D201F315300087CE6 /* Sources */,
 				A4DD2B7C201F315300087CE6 /* Products */,
 				5CB4B8FDD834CBB45931A6E9 /* Pods */,
 				329F5DB187FE4466D6BEDC4B /* Frameworks */,
@@ -126,7 +126,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A4DD2B7D201F315300087CE6 /* MovieExplorer */ = {
+		A4DD2B7D201F315300087CE6 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
 				A42B2C38201F859600572E4A /* Network */,
@@ -138,7 +138,7 @@
 				A4DD2B8A201F315300087CE6 /* LaunchScreen.storyboard */,
 				A42B2C39201F85E300572E4A /* Info.plist */,
 			);
-			path = MovieExplorer;
+			path = Sources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
